@@ -1,0 +1,376 @@
+
+* {
+box-sizing: border-box;
+}
+
+body {
+  background-color: #ededed;
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  font-family: "Commissioner";
+  max-width: 1440px;
+  min-width: 1440px;
+}
+
+button {
+  background-color: hsl(176, 50%, 47%);
+  border: none;
+  border-radius: 50px;
+  color: white;
+  cursor: pointer;
+  height: 48px;
+  min-width: 150px;
+}
+button:hover {
+  background-color: hsl(176, 72%, 28%);
+}
+.header {
+  background-image: url("./images/image-hero-desktop.jpg");
+  color: white;
+  height: 400px;
+}
+.header .menu-wrapper {
+  display: flex;
+  padding: 2rem 5rem;
+}
+.header .menu-wrapper .title {
+  cursor: pointer;
+  font-weight: 700;
+}
+.header .menu {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+}
+.header .menu > * {
+  cursor: pointer;
+  width: 100px;
+}
+.main {
+  display: flex;
+  flex-direction: column;
+}
+.section-wrapper {
+  margin-top: -80px;
+}
+section {
+  align-items: center;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  margin: 20px auto;
+  padding: 25px;
+  position: relative;
+  width: 50%;
+  z-index: 2;
+}
+.section__subtitle {
+  color: hsl(0, 0%, 48%);
+  margin: 0;
+  margin-bottom: 20px;
+}
+.mastercraft-logo {
+  position: absolute;
+  top: -25px;
+}
+.section-bottom {
+  align-items: center;
+  height: 70px;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  width: 100%;
+}
+.section-bottom button {
+  height: 56px;
+}
+progress {
+  height: 12px;
+  margin: 20px;
+  width: 100%;
+}
+progress::-moz-progress-bar {
+  background: hsl(176, 50%, 47%);
+  border-radius: 99px;
+}
+progress::-webkit-progress-value {
+  background: hsl(176, 50%, 47%);
+  border-radius: 99px;
+}
+progress {
+  color: hsl(176, 50%, 47%);
+  border-radius: 99px;
+}
+.bookmark-wrapper {
+  display: flex;
+  position: relative;
+}
+.bookmark-icon {
+  left: -5%;
+  position: absolute;
+}
+.bookmark-button {
+  background-color: hsl(0, 0%, 48%);
+  font-size: 12px;
+  padding-left: 40px;
+}
+.section-statistics .numbers {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+  width: 100%;
+}
+.section-statistics .numbers > div {
+  margin: 10px;
+  width: 100%;
+}
+.section-statistics .numbers > div.divider {
+  border-left: 1px solid black;
+  width: 20%;
+}
+.section-statistics .numbers > div .subtitle {
+  color: hsl(0, 0%, 48%);
+}
+.section-statistics .numbers .main {
+  font-size: 32px;
+  font-weight: 700;
+  margin: 10px 0px;
+}
+.section-statistics .numbers .sub {
+  font-size: 16px;
+  color: hsl(0, 0%, 48%);
+}
+.main-section button {
+  font-size: 16px;
+}
+.main-section .backthisproject-button {
+  width: 200px;
+}
+.subtitle {
+  font-weight: 600;
+  font-size: 24px;
+  margin: 0;
+  width: 100%;
+}
+.contents {
+  color: hsl(0, 0%, 48%);
+  font-weight: 400;
+}
+.card {
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  padding: 25px;
+  margin: 20px;
+}
+.card.disabled {
+  opacity: 0.4;
+}
+.card-top {
+  display: grid;
+  grid-template-columns: 70% 30%;
+  margin: 10px 0px;
+}
+.card-top a {
+  align-self: center;
+  color: hsl(176, 50%, 47%);
+  display: flex;
+  justify-content: center;
+  text-decoration: none;
+}
+.card-middle {
+  color: hsl(0, 0%, 48%);
+  font-size: 15px;
+  margin: 40px 0px;
+}
+.card-bottom {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.card-bottom__value {
+  font-size: 32px;
+  font-weight: 700;
+}
+.card-bottom__postfix {
+  color: grey;
+  vertical-align: super;
+}
+.attribution { font-size: 11px; text-align: center; }
+.attribution a { color: hsl(228, 45%, 44%); }
+.modal {
+  display: none;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+}
+.modal.active {
+  display: block;
+}
+.modal .backdrop {
+  background-color: gray;
+  width: 100%;
+  height: 100%;
+  opacity: 0.6;
+}
+.modal .contents-wrapper {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 3;
+  top: 0;
+}
+.modal .contents {
+  display: grid;
+  grid-template-rows: 130px auto;
+  width: 700px;
+  background-color: white;
+  box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  padding: 20px 40px;
+  position: relative;
+}
+.modal .contents .close-button {
+  cursor: pointer;
+  position: absolute;
+  right: 50px;
+  top: 50px;
+}
+.modal .contents .title {
+  color: black;
+  font-weight: 700;
+  font-size: 24px;
+}
+.modal .contents .sub-title {
+  font-size: 15px;
+  color: hsl(0, 0%, 48%);
+  margin-top: 20px;
+}
+.modal .contents .card-wrapper {
+  height: 100%;
+  display: grid;
+  row-gap: 20px;
+}
+.modal .contents .card {
+  cursor: pointer;
+  margin: 0px;
+  padding: 0px;
+  height: 140px;
+  width: 100%;
+}
+.modal .contents .card.active {
+  border-width: 2px;
+  border-color: hsl(176, 50%, 47%);
+}
+.modal .contents .card.has-pledge.active {
+  height: 240px;
+}
+.modal .contents .card .top-area {
+  align-items: baseline;
+  margin: 0px;
+  width: 100%;
+  flex-grow: 100%;
+  padding: 20px 40px;
+  flex: 1;
+}
+.modal .contents .card .top-area > div {
+  margin-left: 10px;
+}
+.modal .contents .card .top-area .pledge {
+  color: hsl(176, 50%, 47%);
+  margin-left: 10px;
+}
+.modal .contents .card .card-title::before {
+  position: absolute;
+  left: 10px;
+  content: '•';
+  border: 1px solid #ededed;
+  color: white;
+  border-radius: 50%;
+  width: 25px;
+  display: flex;
+  justify-content: center;
+}
+.modal .contents .card .card-title {
+  color: black;
+  font-size: 20px;
+}
+.modal .contents .card .card-title {
+  color: black;
+  font-size: 20px;
+}
+.modal .contents .card.active .card-title::before {
+  color: hsl(176, 50%, 47%);
+}
+.modal .contents .card:hover .card-title {
+  color: hsl(176, 50%, 47%);
+}
+.modal .contents .card:hover .card-title::before {
+  border-color: hsl(176, 50%, 47%);
+}
+.modal .contents .card .card-contents {
+  margin-top: 20px;
+}
+.modal .contents .card .counts {
+  position: absolute;
+  color: black;
+  font-weight: 500;
+  right: 70px;
+}
+.modal .contents .card .counts::after {
+  content: 'left';
+  color: gray;
+  position: absolute;
+  left: 30px;
+}
+.modal .contents .card .bottom-area {
+  display: none;
+  height: 90px;
+  width: 100%;
+}
+.modal .contents .card.active .bottom-area {
+  display: block;
+}
+.modal .contents .card .bottom-area .hr {
+  border: 1px solid #dedede;
+}
+.modal .contents .card .bottom-area .selected-pledge {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 10px;
+}
+.modal .contents .card .bottom-area .selected-pledge .text {
+  padding: 0px 20px;
+}
+.modal .contents .card .bottom-area .selected-pledge button {
+  border: 1px solid #dedede;
+  background-color: white;
+  color: black;
+  min-width: 100px;
+  margin: 0px 5px;
+  font-weight: 600;
+  position: relative;
+}
+.modal .contents .card .bottom-area .selected-pledge button .value::before {
+  content: '$';
+  position: absolute;
+  left: 25px;
+  color: #dedede;
+}
+.modal .contents .card .bottom-area .selected-pledge button.value-button:hover {
+  background-color: hsl(176, 50%, 47%);
+  color: white;
+}
+.modal .contents .card .bottom-area .selected-pledge button.continue-button {
+  background-color: hsl(176, 50%, 47%);
+  color: white;
+}
